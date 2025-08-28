@@ -72,11 +72,36 @@ body {
 	color: #2d3e50;
 }
 
+/* 主題區塊卡片樣式 */
+.topic-card {
+	background: #fff;
+	border-radius: 16px;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+	margin-bottom: 40px;
+	padding: 24px 16px 8px 16px;
+}
+
+.topic-card h1 {
+	font-size: 2.2em;
+	font-weight: bold;
+	color: #1a2533;
+	border-left: 6px solid #4e8cff;
+	padding-left: 16px;
+	margin-bottom: 18px;
+	margin-top: 0;
+	letter-spacing: 2px;
+}
+
+/* 主題間距 */
+.topic-card + .topic-card {
+	margin-top: 0;
+}
+
 /*lession_01*/
 .alpha-container {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr); /* 三欄，每欄平均寬度 */
-	gap: 20px; /* 欄位與列之間的間距 */
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
 	padding: 20px;
 }
 
@@ -85,6 +110,88 @@ body {
   border: 1px solid #ccc;
   padding: 40px;
   text-align: center;
-  font-size: 18px;
+  font-size: 3em;
   border-radius: 8px;
+}
+
+.alpha-container > div::after 
+{
+  content: attr(data-text);
+  font-size: 0.8em;
+  margin-left: 4px;
+}
+
+.doubleChild-container 
+{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
+	padding: 20px;
+}
+
+.doubleChild-container > div {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 40px;
+  text-align: center;
+  font-size: 3em;
+  border-radius: 8px;
+}
+
+.thanh-container 
+{
+	 display: grid;
+	 grid-template-columns: repeat(3, 1fr);
+	 gap: 20px;
+	 padding: 20px;
+}
+
+.thanh-container > div {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+	.thanh-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 480px) {
+	.thanh-container {
+		grid-template-columns: 1fr;
+	}
+}
+
+.thanh-container > div {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 40px;
+  text-align: center;
+  font-size: 3em;
+  border-radius: 8px;
+}
+
+.doubleChild-container > div , .thanh-container > div, .alpha-container > div
+{
+	background-color: #f2f2f2;
+	border: 2px solid #4e8cff;
+	color: #223044;
+	padding: 32px 0;
+	text-align: center;
+	font-size: 2.2em;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(78,140,255,0.08);
+	cursor: pointer;
+	transition: background 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
+	outline: none;
+	user-select: none;
+}
+
+.doubleChild-container > div:hover,
+.thanh-container > div:hover,
+.alpha-container > div:hover {
+	background-color: #4e8cff;
+	color: #fff;
+	border-color: #223044;
+	box-shadow: 0 4px 16px rgba(78,140,255,0.18);
 }

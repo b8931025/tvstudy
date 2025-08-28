@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				.then(html => {
 					const match = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
 					document.getElementById('main-content').innerHTML = match ? match[1] : html;
+					afterChangeContain();
 				});
 			// 側邊欄高亮
 			document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
@@ -29,3 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 });
+
+
+function afterChangeContain() 
+{
+	//轉小寫，加入data-text
+	document.querySelectorAll('.alpha-container div').forEach(el => {
+		el.setAttribute('data-text', el.textContent.trim().toLowerCase());
+	});
+}
