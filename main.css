@@ -195,3 +195,17 @@ body {
 	border-color: #223044;
 	box-shadow: 0 4px 16px rgba(78,140,255,0.18);
 }
+
+.thanh-container div 
+{
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ngang { background-image: url('./source/img/thanh/ngang.png'); }
+.sac { background-image: url('./source/img/thanh/sac.png'); }
+.huyen { background-image: url('./source/img/thanh/huyen.png'); }
+.hoi { background-image: url('./source/img/thanh/hoi.png'); }
+.nga { background-image: url('./source/img/thanh/nga.png'); }
+.nang { background-image: url('./source/img/thanh/nang.png'); }
